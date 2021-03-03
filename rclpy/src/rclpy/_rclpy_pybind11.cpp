@@ -15,6 +15,7 @@
 #include <pybind11/pybind11.h>
 
 #include "context.hpp"
+#include "guard_condition.hpp"
 #include "rclpy_common/exceptions.hpp"
 
 namespace py = pybind11;
@@ -40,4 +41,11 @@ PYBIND11_MODULE(_rclpy_pybind11, m) {
   m.def(
     "rclpy_ok", &rclpy::context_is_valid,
     "Return true if the context is valid");
+
+  m.def(
+    "rclpy_create_guard_condition", &rclpy::guard_condition_create,
+    "Create a general purpose guard condition");
+  m.def(
+    "rclpy_trigger_guard_condition", &rclpy::guard_condition_trigger,
+    "Trigger a general purpose guard condition");
 }

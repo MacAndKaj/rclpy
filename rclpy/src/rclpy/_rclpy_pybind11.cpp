@@ -71,5 +71,5 @@ PYBIND11_MODULE(_rclpy_pybind11, m) {
     "Get the period of a timer.");
   m.def(
     "rclpy_create_timer", &rclpy::create_timer,
-  "Create a Timer.");
+    "Create a Timer.");
 }
